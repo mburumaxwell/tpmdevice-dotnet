@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>IoT Helper for accessing the TPM</Description>
+    <Description>
+      Convenient functions for TPM usage in .NET inspired by https://www.nuget.org/packages/Microsoft.Devices.Tpm/
+    </Description>
   </PropertyGroup>
 
   <ItemGroup>

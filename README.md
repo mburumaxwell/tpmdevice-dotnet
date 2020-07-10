@@ -2,7 +2,9 @@
 
 ## Introduction
 
-This library eases using a TPM in dotnet. It is built with the influence from the official one on Github (https://github.com/ms-iot/security/tree/master/Limpet) and on NuGet (https://www.nuget.org/packages/Microsoft.Devices.Tpm/) which has not been updated for while.
+This library eases using a TPM in dotnet. It is built with the influence from the official one
+on Github (https://github.com/ms-iot/security/tree/master/Limpet) and
+on NuGet (https://www.nuget.org/packages/Microsoft.Devices.Tpm/) which has not been updated for while.
 It is particularly useful when working with a BackgroundTask in Windows IoT built on UWP.
 
 ### Usage
