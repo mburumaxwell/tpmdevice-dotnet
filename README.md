@@ -12,7 +12,7 @@ It is particularly useful when working with a BackgroundTask in Windows IoT buil
 Getting a connection string
 
 ```csharp
-var tpmDevice = new TpmDevice(logicalDeviceId: 0);
+var tpmDevice = new IoTHubTpmDevice(logicalDeviceId: 0);
 
 var hostName = tpmDevice.GetHostName();
 Console.WriteLine($"HostName: {hostName}");
@@ -35,7 +35,7 @@ var deviceId = "your-device-id-here";
 var moduleId = null; // if no ModuleId is required, leave null, otherwise specify
 var keyBase64 = "your-device-key-here";
 var key = Convert.FromBase64String(keyBase64);
-var tpmDevice = new TpmDevice(logicalDeviceId: 0);
+var tpmDevice = new IoTHubTpmDevice(logicalDeviceId: 0);
 tpmDevice.Provision(hostName, deviceId, moduleId);
 tpmDevice.Provision(key);
 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(5)); // your device might need some time
@@ -47,7 +47,7 @@ Debug.WriteLine(connectionString);
 Sample usage in a background task for UWP IoT
 
 ```csharp
-var tpmDevice = new TpmDevice(logicalDeviceId: 0);
+var tpmDevice = new IoTHubTpmDevice(logicalDeviceId: 0);
 string connectionString;
 
 do

@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
+using TpmDevice;
 using Windows.ApplicationModel.Background;
 using Windows.Foundation;
 
@@ -70,7 +71,7 @@ namespace ExampleUwpBackgroundApp
 
         private async Task<string> GetConnectionStringAsync(CancellationToken cancellationToken)
         {
-            var tpmDevice = new TpmDevice.TpmDevice(0);
+            var tpmDevice = new IoTHubTpmDevice(0);
             string connectionString;
 
             do
