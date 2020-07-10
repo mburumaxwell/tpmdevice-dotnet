@@ -48,7 +48,7 @@ stages:
     - task: DotNetCoreCLI@2
       displayName: 'dotnet build'
       inputs:
-        projects: '**/*.csproj'
+        projects: 'src/**/*.csproj'
         arguments: '--configuration $(buildConfiguration)'
 
     - task: DotNetCoreCLI@2
@@ -62,6 +62,7 @@ stages:
       displayName: 'dotnet pack'
       inputs:
         command: pack
+        packagesToPack: 'src/**/*.csproj'
         nobuild: true
         versioningScheme: byEnvVar
         versionEnvVar: 'GITVERSION_NUGETVERSION'
