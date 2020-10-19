@@ -2,7 +2,7 @@ trigger:
   batch: true
   branches:
     include:
-      - master
+      - refs/tags/*
   paths:
     exclude: # no need to rebuild on changes in documentation
       - README.md
@@ -48,7 +48,7 @@ stages:
     - task: DotNetCoreCLI@2
       displayName: 'dotnet build'
       inputs:
-        projects: 'src/**/*.csproj'
+        projects: '**/*.csproj'
         arguments: '--configuration $(buildConfiguration)'
 
     - task: DotNetCoreCLI@2
@@ -62,7 +62,6 @@ stages:
       displayName: 'dotnet pack'
       inputs:
         command: pack
-        packagesToPack: 'src/**/*.csproj'
         nobuild: true
         versioningScheme: byEnvVar
         versionEnvVar: 'GITVERSION_NUGETVERSION'
@@ -76,6 +75,7 @@ stages:
 
 - stage: Release
   dependsOn: Build
+  condition: and(succeeded(), not(startsWith(variables['Build.SourceBranch'], 'refs/pull/')))
   jobs:
     - deployment: NugetOrg
       environment: NugetOrg
