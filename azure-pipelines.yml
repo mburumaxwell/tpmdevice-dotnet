@@ -62,6 +62,7 @@ stages:
       displayName: 'dotnet pack'
       inputs:
         command: pack
+        projects: '**/src/**/*.csproj'
         nobuild: true
         versioningScheme: byEnvVar
         versionEnvVar: 'GITVERSION_NUGETVERSION'
