@@ -8,9 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{17EDBF8E-3A97-4E78-A6C6-BB30C7441A76}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{D5A0E35E-834D-4E29-8E58-5E46C84C0497}"
-	ProjectSection(SolutionItems) = preProject
-		examples\Directory.Build.props = examples\Directory.Build.props
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{59DB7522-3675-4736-B2D2-4AC57D2B9848}"
 	ProjectSection(SolutionItems) = preProject
