@@ -24,11 +24,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{210E0BA7-2022-4759-8ABE-395921B32D52}"
-	ProjectSection(SolutionItems) = preProject
-		test\Directory.Build.props = test\Directory.Build.props
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleUwpBackgroundApp", "examples\ExampleUwpBackgroundApp\ExampleUwpBackgroundApp.csproj", "{CB00288A-3C5C-4BB1-88BE-F3A9F7920934}"
 EndProject
 Global
