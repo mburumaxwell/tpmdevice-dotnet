@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TpmDevice", "src\TpmDevice\TpmDevice.csproj", "{D43F36C4-BC11-40D3-98BF-AFDE225F05D4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{17EDBF8E-3A97-4E78-A6C6-BB30C7441A76}"
-	ProjectSection(SolutionItems) = preProject
-		src\Directory.Build.props = src\Directory.Build.props
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{D5A0E35E-834D-4E29-8E58-5E46C84C0497}"
 	ProjectSection(SolutionItems) = preProject
