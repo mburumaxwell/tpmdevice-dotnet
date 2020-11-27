@@ -26,7 +26,7 @@ stages:
   jobs:
   - job: Build
     pool:
-      vmImage: 'ubuntu-latest'
+      vmImage: 'windows-latest' # The UWP sample requires windows
 
     variables:
       solution: '**/*.sln'
@@ -48,7 +48,7 @@ stages:
     - task: DotNetCoreCLI@2
       displayName: 'dotnet build'
       inputs:
-        projects: '**/src/**/*.csproj'
+        projects: '**/*.csproj'
         arguments: '--configuration $(buildConfiguration)'
 
     - task: DotNetCoreCLI@2
@@ -62,7 +62,6 @@ stages:
       displayName: 'dotnet pack'
       inputs:
         command: pack
-        projects: '**/src/**/*.csproj'
         nobuild: true
         versioningScheme: byEnvVar
         versionEnvVar: 'GITVERSION_NUGETVERSION'
