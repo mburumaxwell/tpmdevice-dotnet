@@ -45,11 +45,16 @@ stages:
       inputs:
         restoreSolution: '$(solution)'
 
-    - task: DotNetCoreCLI@2
-      displayName: 'dotnet build'
+    # - task: DotNetCoreCLI@2
+    #   displayName: 'dotnet build'
+    #   inputs:
+    #     projects: '**/*.csproj'
+    #     arguments: '--configuration $(buildConfiguration)'
+    - task: VSBuild@1
+      displayName: 'Build solution'
       inputs:
-        projects: '**/*.csproj'
-        arguments: '--configuration $(buildConfiguration)'
+        solution: '$(solution)'
+        configuration: $(buildConfiguration)
 
     - task: DotNetCoreCLI@2
       displayName: 'dotnet test'
