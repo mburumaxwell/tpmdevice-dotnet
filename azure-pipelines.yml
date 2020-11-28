@@ -66,9 +66,10 @@ stages:
     - task: DotNetCoreCLI@2
       displayName: 'dotnet pack'
       inputs:
-        command: pack
+        command: 'pack'
+        packagesToPack: '**/src/**/*.csproj'
         nobuild: true
-        versioningScheme: byEnvVar
+        versioningScheme: 'byEnvVar'
         versionEnvVar: 'GITVERSION_NUGETVERSION'
 
     - task: PublishBuildArtifacts@1
