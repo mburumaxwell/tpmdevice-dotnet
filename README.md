@@ -3,8 +3,8 @@
 ## Introduction
 
 This library eases using a TPM in dotnet. It is built with the influence from the official one
-on Github (https://github.com/ms-iot/security/tree/master/Limpet) and
-on NuGet (https://www.nuget.org/packages/Microsoft.Devices.Tpm/) which has not been updated for while.
+on [Github](https://github.com/ms-iot/security/tree/master/Limpet) and
+on [NuGet](https://www.nuget.org/packages/Microsoft.Devices.Tpm/) which has not been updated for while.
 It is particularly useful when working with a BackgroundTask in Windows IoT built on UWP.
 
 ### Usage
@@ -27,10 +27,10 @@ Console.WriteLine($"Connection String: {connectionString}");
 Debug.WriteLine($"Connection String: {connectionString}");
 ```
 
-Writing to the TPM (*Requires the device be provisioning in the IoT Hub*)
+Writing to the TPM (*Requires the device be provisioned in the IoT Hub*)
 
 ```csharp
-var hostName = "contose.azure-devices.net";
+var hostName = "your-hub-name-here.azure-devices.net";
 var deviceId = "your-device-id-here";
 var moduleId = null; // if no ModuleId is required, leave null, otherwise specify
 var keyBase64 = "your-device-key-here";
@@ -67,7 +67,7 @@ do
     {
         // We'll just keep trying.
     }
-    Logger.Verbose("Waiting for connection string ...");
+    Debug.WriteLine("Waiting for connection string ...");
     await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
 } while (true);
 
@@ -83,4 +83,4 @@ Please leave all comments, bugs, requests, and issues on the Issues page. We'll 
 
 ### License
 
-The Library is licensed under the [MIT](http://www.opensource.org/licenses/mit-license.php "Read more about the MIT license form") license. Refere to the [LICENSE](./LICENSE) file for more information.
+The Library is licensed under the [MIT](http://www.opensource.org/licenses/mit-license.php "Read more about the MIT license form") license. Refer to the [LICENSE](./LICENSE) file for more information.
