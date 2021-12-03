@@ -1,8 +1,5 @@
 ﻿using Microsoft.Azure.Devices.Client;
-using System;
 using System.Diagnostics;
-using System.Threading;
-using System.Threading.Tasks;
 using TpmDevice;
 using Windows.ApplicationModel.Background;
 using Windows.Foundation;
