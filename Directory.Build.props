@@ -1,0 +1,9 @@
+<Project>
+  <!-- There is nothing else to import. -->
+
+  <PropertyGroup>
+    <LangVersion>10.0</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>
