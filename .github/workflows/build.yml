@@ -20,12 +20,12 @@ on:
       - CHANGELOG.md
       - docs/**
 
+env:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+
 jobs:
   Build:
     runs-on: ubuntu-latest
-    env:
-      buildConfiguration: 'Release'
-      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
 
     steps:
     - name: Checkout
@@ -53,15 +53,12 @@ jobs:
       run: dotnet restore
 
     - name: Build
-      run: >
-        dotnet build
-        --configuration $buildConfiguration
-        --no-restore
+      run: dotnet build --configuration Release --no-restore
 
     - name: Test
       run: >
         dotnet test
-        --configuration $buildConfiguration
+        --configuration Release
         --no-restore
         --verbosity normal
         --collect "Code coverage"
@@ -69,7 +66,7 @@ jobs:
     - name: Pack
       run: >
         dotnet pack
-        --configuration $buildConfiguration
+        --configuration Release
         --no-build
         --verbosity Detailed
         --output ${{ github.workspace }}/drop
