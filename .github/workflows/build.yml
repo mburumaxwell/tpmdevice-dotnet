@@ -1,4 +1,4 @@
-name: Build and Publish
+name: Build
 
 on:
   push:
@@ -40,6 +40,7 @@ jobs:
 
     - name: Determine Version
       uses: gittools/actions/gitversion/execute@v0
+      id: gitversion
       with:
         useConfigFile: true
 
@@ -71,8 +72,9 @@ jobs:
         --configuration $buildConfiguration
         --no-build
         --verbosity Detailed
-        --output $GITHUB_WORKSPACE/drop
-        -p:PackageVersion=$GITVERSION_NUGETVERSION
+        --output ${{ github.workspace }}/drop
+        -p:PackageVersion=${{ steps.gitversion.outputs.nuGetVersionV2 }}
+        -p:VersionPrefix=${{ steps.gitversion.outputs.nuGetVersionV2 }}
 
     - name: Publish Artifact
       uses: actions/upload-artifact@v4
@@ -102,6 +104,6 @@ jobs:
 
     - name: Publish to NuGet.org
       run: >
-        dotnet nuget push "$GITHUB_WORKSPACE/drop/*"
+        dotnet nuget push "${{ github.workspace }}/drop/*"
         -k ${{ secrets.NUGET_API_KEY }}
         --skip-duplicate
