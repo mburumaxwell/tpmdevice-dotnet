@@ -4,6 +4,7 @@
   <PropertyGroup>
     <LangVersion>10.0</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
   </PropertyGroup>
 
 </Project>
